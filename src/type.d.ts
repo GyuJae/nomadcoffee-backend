@@ -17,7 +17,7 @@ export type Resolvers = {
   };
 };
 
-export type CoreOutputType = {
+export type CoreOutput = {
   ok: boolean;
   error?: string;
 };
