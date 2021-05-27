@@ -15,8 +15,8 @@ model User {
   email          String   @unique
   username       String   @unique
   password       String
-  name           String?
-  location       String?
+  name           String
+  location       String
   avatarURL      String?
   githubUsername String?
   createdAt      DateTime @default(now())
