@@ -1,4 +1,4 @@
-import { PrismaClient } from ".prisma/client";
+import { PrismaClient, User } from "@prisma/client";
 
 export type Context = {
   client: PrismaClient;
@@ -23,13 +23,23 @@ export type CoreOutput = {
   error?: string;
 };
 
-export type User = {
-  id: number;
-  email: string;
-  username: string;
-  password: string;
-  name: string | null;
-  location: string | null;
-  avatarURL: string | null;
-  githubUsername: string | null;
+export type StringFieldUpdateOperationsInput = {
+  set?: string;
+};
+
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null;
+};
+
+export type DateTimeFieldUpdateOperationsInput = {
+  set?: Date | string;
+};
+
+export type EditProfileInput = {
+  email?: StringFieldUpdateOperationsInput | string;
+  username?: StringFieldUpdateOperationsInput | string;
+  name?: StringFieldUpdateOperationsInput | string;
+  location?: StringFieldUpdateOperationsInput | string;
+  avatarURL?: NullableStringFieldUpdateOperationsInput | string | null;
+  githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
 };

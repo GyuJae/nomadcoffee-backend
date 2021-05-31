@@ -1,7 +1,6 @@
 require("dotenv").config();
 import { ApolloServer } from "apollo-server";
 import { typeDefs, resolvers } from "./schema";
-import { Context, User } from "./type";
 import client from "./client";
 import getUser from "./utils/getUser";
 

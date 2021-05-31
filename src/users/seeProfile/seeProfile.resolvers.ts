@@ -1,4 +1,5 @@
-import { Resolvers, User } from "../../type";
+import { Resolvers } from "../../type";
+import { User } from "@prisma/client";
 
 type SeeProfileInput = {
   username?: string;
@@ -21,6 +22,10 @@ const resolvers: Resolvers = {
         const user = await client.user.findUnique({
           where: {
             username,
+          },
+          include: {
+            followings: true,
+            followers: true,
           },
         });
         if (!user) {
