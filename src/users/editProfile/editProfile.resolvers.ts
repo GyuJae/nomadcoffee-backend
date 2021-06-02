@@ -1,6 +1,5 @@
 import { Resolvers, CoreOutput, EditProfileInput } from "../../type";
 import protectedResolver from "../../utils/protectedResolver";
-import * as bcrypt from "bcrypt";
 
 const resolvers: Resolvers = {
   Mutation: {

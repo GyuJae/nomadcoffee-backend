@@ -31,10 +31,6 @@ export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null;
 };
 
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string;
-};
-
 export type EditProfileInput = {
   email?: StringFieldUpdateOperationsInput | string;
   username?: StringFieldUpdateOperationsInput | string;
@@ -42,4 +38,11 @@ export type EditProfileInput = {
   location?: StringFieldUpdateOperationsInput | string;
   avatarURL?: NullableStringFieldUpdateOperationsInput | string | null;
   githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
+};
+
+export type EditCoffeeShopInput = {
+  shopId: number;
+  name?: StringFieldUpdateOperationsInput | string;
+  latitude?: StringFieldUpdateOperationsInput | string;
+  longitude?: StringFieldUpdateOperationsInput | string;
 };

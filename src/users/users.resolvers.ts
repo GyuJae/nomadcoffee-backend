@@ -30,6 +30,14 @@ const resolvers: Resolvers = {
       });
       return Boolean(exists);
     },
+    coffeeShops: async ({ id }, _, { client }) => {
+      const shops = await client.coffeeShop.findMany({
+        where: {
+          userId: id,
+        },
+      });
+      return shops;
+    },
   },
 };
 
