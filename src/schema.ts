@@ -1,8 +1,7 @@
-import { loadFilesSync } from "@graphql-tools/load-files";
-import { mergeResolvers, mergeTypeDefs } from "@graphql-tools/merge";
+import { loadFilesSync, mergeResolvers, mergeTypeDefs } from "graphql-tools";
 
-const loadTypeDef = loadFilesSync(`${__dirname}/**/**/*.typeDefs.ts`);
-const loadResolvers = loadFilesSync(`${__dirname}/**/**/*.resolvers.ts`);
+const loadedTypes = loadFilesSync(`${__dirname}/**/*.typeDefs.*`);
+const loadedResolvers = loadFilesSync(`${__dirname}/**/*.resolvers.*`);
 
-export const typeDefs = mergeTypeDefs(loadTypeDef);
-export const resolvers = mergeResolvers(loadResolvers);
+export const typeDefs = mergeTypeDefs(loadedTypes);
+export const resolvers = mergeResolvers(loadedResolvers);
